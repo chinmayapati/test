@@ -2,7 +2,7 @@ import os, time
 
 while True:
     # run an update
-    os.system("git pull")
+    #os.system("git pull")
     
     #change file locations
     DIR = os.curdir
@@ -11,11 +11,12 @@ while True:
     madeChanges = False
     
     for i in files:
-        madeChanges = True
         if i[:-3]=="apk":
+            madeChanges = True
             print i, DIR+"/android/"+i
             #os.rename(i, DIR+"/android/"+i)
         else:
+            madeChanges = True
             print i, DIR+"/ios/"+i
             #os.rename(i, DIR+"/ios/"+i)
     
