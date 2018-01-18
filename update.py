@@ -1,11 +1,13 @@
 import os, time
 
+DIR = os.curdir
+
 while True:
+    
     # run an update
     os.system("git pull")
     
     #change file locations
-    DIR = os.curdir
     files = os.listdir(DIR)
     
     madeChanges = False
@@ -19,10 +21,12 @@ while True:
             os.rename(i, DIR+"/ios/"+i)
     
     if madeChanges:
-        print "\n","="*15,"\nFound some changes! :(\n"
+        print "\n","="*30,"\nFound some changes! :(\n"
         os.system("git add .")
         os.system('git commit -m "Added files to specified directory"')
         os.system("git push")
+        print "\n","="*30,"\nChanges settled! :)\n"
+    
     else:
         print "\nNo new changes :)\n"
         
