@@ -19,7 +19,7 @@ while True:
             os.rename(i, DIR+"/ios/"+i)
     
     if madeChanges:
-        print "\n","="*15,"\nFound some changes!"
+        print "\n","="*15,"\nFound some changes! :("
         os.system("git add .")
         os.system('git commit -m "Added files to specified directory"')
         os.system("git push")
@@ -27,4 +27,3 @@ while True:
         print "\nNo new changes :)"
         
     time.sleep(5)
-
